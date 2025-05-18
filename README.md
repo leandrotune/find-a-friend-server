@@ -19,9 +19,3 @@ Find A Friend
  - [ ] The user who wants to adopt will contact org via WhatsApp
  - [ ] All filters, besides the city, are optional
  - [ ] For an org access the application as Admin, it needs to be logged in
-
-## RNFs (Requisitos não-funcionais)
-
-## Regras da aplicação
-
-[] Deve ser possível cadastrar um pet
