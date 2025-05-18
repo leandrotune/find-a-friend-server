@@ -4,6 +4,12 @@
       "ES2023"
     ],
     "module": "nodenext",
-    "target": "ES2023"
+    "target": "ES2023",
+    "baseUrl": "./",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
   }
 }
