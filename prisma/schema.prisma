@@ -1,6 +1,6 @@
 generator client {
   provider = "prisma-client-js"
-  output   = "../generated/prisma"
+  // output   = "../generated/prisma"
 }
 
 datasource db {
@@ -8,20 +8,20 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Organization {
+model Org {
   id              String @default(uuid())
-  responsibleName String
+  nameResponsible String
   email           String @unique
   password_hash   String
   address         String
   number          Int
-  zip             Float
+  zip             Int
   phone           Int
 
   city City
   Pets Pet[]
 
-  @@map("organizations")
+  @@map("orgs")
 }
 
 model Pet {
@@ -32,10 +32,11 @@ model Pet {
   requirement       String[]
   organizationEmail String
 
-  energyLevel  EnergyLevel
-  size         Size
-  city         City
-  organization Organization @relation(fields: [organizationEmail], references: [email])
+  energyLevel EnergyLevel
+  size        Size
+  city        City
+  org         Org         @relation(fields: [orgEmail], references: [email])
+  orgEmail    String
 
   @@map("pets")
 }
